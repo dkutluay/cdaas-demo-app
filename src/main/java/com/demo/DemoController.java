@@ -7,18 +7,18 @@ import org.springframework.ui.Model;
 public class DemoController {
 
 	public static String tower() {
-		return "http://asdv004.ux.resource.tld";
+		return "http://192.168.130.24";
 	}
 	public static String xlrelease() {
-		return "https://xlrelease-dev.office.intern";
+		return "https://192.168.130.22";
 	}
 	public static String artifactory() {
-		return "https://artifactory-dev.office.intern";
+		return "https://192.168.130.23";
 	}
 	public static String pgadmin() {
-		return "https://postgres-dev.office.intern/pgadmin4";
+		return "https://192.168.130.21/pgadmin4";
 	}
 	public static String adminer() {
-		return "https://postgres-dev.office.intern/adminer";
+		return "https://192.168.130.21/adminer";
 	}
 }

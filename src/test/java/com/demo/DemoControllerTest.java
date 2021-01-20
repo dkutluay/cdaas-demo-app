@@ -19,31 +19,13 @@ public class DemoControllerTest {
 	@Test
 	public void cdaas() throws Exception {
 		mockMvc.perform(get("/"))
-				.andExpect(content().string(containsString("CDaaS")));
-	}
-
-	@Test
-	public void gitlab() throws Exception {
-		mockMvc.perform(get("/"))
-				.andExpect(content().string(containsString("GitLab")));
-	}
-
-	@Test
-	public void vault() throws Exception {
-		mockMvc.perform(get("/"))
-				.andExpect(content().string(containsString("Vault")));
+				.andExpect(content().string(containsString("Demo App")));
 	}
 
 	@Test
 	public void tower() throws Exception {
 		mockMvc.perform(get("/"))
 				.andExpect(content().string(containsString("Ansible Tower")));
-	}
-
-	@Test
-	public void jenkins() throws Exception {
-		mockMvc.perform(get("/"))
-				.andExpect(content().string(containsString("Jenkins")));
 	}
 
 	@Test

@@ -1,4 +1,7 @@
 # cdaas-demo-app
 
+Note to myself :) Keep this repository for VZ demo-app. Do not remove the repository. 
 
-test if this works!!
+This repository is used to test the application that is being deployed by https://github.com/ltutar/playbook-awx-artifactory-download-and-deploy
+
+

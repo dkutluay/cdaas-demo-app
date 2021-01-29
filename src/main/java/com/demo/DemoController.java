@@ -5,12 +5,8 @@ import org.springframework.ui.Model;
 
 @Controller
 public class DemoController {
-
-	public static String tower() {
-		return "http://192.168.130.24";
-	}
-	public static String xlrelease() {
-		return "https://192.168.130.22";
+	public static String gitlab() {
+		return "https://192.168.130.25";
 	}
 	public static String artifactory() {
 		return "https://192.168.130.23";

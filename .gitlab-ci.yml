@@ -3,8 +3,8 @@ image: java:8
 variables:
   DOCKER_TLS_CERTDIR: "/certs"
   DOCKER_IMAGE: "docker:19.03.13"
-  ARTIFACTORY_URL: "https://artifactory-dev.office.intern/artifactory/cdaas"
-  XLRELEASE_URL: "https://xlrelease-dev.office.intern"
+  ARTIFACTORY_URL: "https://192.168.130.23/artifactory/cdaas"
+  XLRELEASE_URL: "https://192.168.130.22"
   ARTIFACT_NAME: "cdaas-demo-app"
 
 default:

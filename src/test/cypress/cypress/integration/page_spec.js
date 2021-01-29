@@ -1,15 +1,11 @@
 describe('Webpage Test', () => {
-  it('Find and check XL Release', () => {
+  it('Find and check GitLab', () => {
     cy.visit('/')
-    cy.contains('XL Release').click()
+    cy.contains('GitLab').click()
   })
   it('Find and check Artifactory', () => {
     cy.visit('/')
     cy.contains('Artifactory').click()
-  })
-  it('Find and check Ansible Tower', () => {
-    cy.visit('/')
-    cy.contains('Ansible Tower').click()
   })
   it('Find and check PG Admin', () => {
     cy.visit('/')
@@ -19,5 +15,4 @@ describe('Webpage Test', () => {
     cy.visit('/')
     cy.contains('Adminer').click()
   })
-
 })

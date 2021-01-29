@@ -23,15 +23,9 @@ public class DemoControllerTest {
 	}
 
 	@Test
-	public void tower() throws Exception {
+	public void gitlab() throws Exception {
 		mockMvc.perform(get("/"))
-				.andExpect(content().string(containsString("Ansible Tower")));
-	}
-
-	@Test
-	public void xlrelease() throws Exception {
-		mockMvc.perform(get("/"))
-				.andExpect(content().string(containsString("XL Release")));
+				.andExpect(content().string(containsString("GitLab")));
 	}
 
 	@Test

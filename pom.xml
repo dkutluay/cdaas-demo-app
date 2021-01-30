@@ -7,11 +7,11 @@
         <version>2.4.0</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.demo</groupId>
+    <groupId>com.ziggo</groupId>
     <artifactId>cdaas-demo-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>cdaas-demo-app</name>
-    <description>Demo project</description>
+    <description>Demo project for CDaaS</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -123,4 +123,3 @@
     </build>
 
 </project>
-

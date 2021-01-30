@@ -42,7 +42,27 @@ Build a specific version
 ./mvnw clean install spring-boot:repackage
 ```
 
+## Running the application as jar
+
+```bash
+java -jar ./target/cdaas-demo-app-1.0.0.jar
+```
+
+## Docker
+Build image
+
+```bash
+docker build -t cdaas-demo-app:latest .
+```
+
+## Running the application as docker container
+
+```bash
+docker run -d cdaas-demo-app:latest
+```
+
 # Application endpoints
+
 Replace localhost accordingly.
 
 - Main application: http://localhost:8080/

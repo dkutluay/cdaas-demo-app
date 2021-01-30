@@ -68,3 +68,6 @@ Replace localhost accordingly.
 - Main application: http://localhost:8080/
 - Actuator endpoint: http://localhost:8080/actuator
 - Health: http://localhost:8080/actuator/health
+
+![<img src="images/java-end-result.png" height="400">](images/java-end-result.png)
+

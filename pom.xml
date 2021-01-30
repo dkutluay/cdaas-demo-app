@@ -50,13 +50,8 @@
         <dependency>
             <groupId>io.gatling.highcharts</groupId>
             <artifactId>gatling-charts-highcharts</artifactId>
-            <version>3.1.0</version>
+            <version>3.5.0</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.gatling.highcharts</groupId>
-            <artifactId>gatling-charts-highcharts</artifactId>
-            <version>3.4.2</version>
         </dependency>
     </dependencies>
 
@@ -128,3 +123,4 @@
     </build>
 
 </project>
+

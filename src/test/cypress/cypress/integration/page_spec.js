@@ -11,8 +11,4 @@ describe('Webpage Test', () => {
     cy.visit('/')
     cy.contains('Adminer').click()
   })
-  it('Find and check GitLab', () => {
-    cy.visit('/')
-    cy.contains('GitLab').click()
-  })
 })

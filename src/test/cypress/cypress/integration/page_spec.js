@@ -1,8 +1,4 @@
 describe('Webpage Test', () => {
-  it('Find and check GitLab', () => {
-    cy.visit('/')
-    cy.contains('GitLab').click()
-  })
   it('Find and check Artifactory', () => {
     cy.visit('/')
     cy.contains('Artifactory').click()
@@ -14,5 +10,9 @@ describe('Webpage Test', () => {
   it('Find and check Adminer', () => {
     cy.visit('/')
     cy.contains('Adminer').click()
+  })
+  it('Find and check GitLab', () => {
+    cy.visit('/')
+    cy.contains('GitLab').click()
   })
 })

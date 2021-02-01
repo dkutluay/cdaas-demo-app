@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.cdaas</groupId>
     <artifactId>cdaas-demo-app</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>cdaas-demo-app</name>
     <description>Demo project for CDaaS</description>
 

@@ -88,4 +88,3 @@ deploy:TAP:
       $XLRELEASE_URL/api/v1/templates/Applications/Folderbc5fd051b0154c3b9f8bfa51c1f7d5b0/Release2b8435e8d90c4e46af2e0ab18aeb7165/create
   dependencies:
     - publish:artifact
-    - publish:docker-image

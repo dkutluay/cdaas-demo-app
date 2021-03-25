@@ -50,15 +50,6 @@ build:jar:
   dependencies:
     - test:unit-test
 
-build:docker-image:
-  image: $DOCKER_IMAGE
-  stage: build
-  script:
-    - cd $CI_PROJECT_DIR
-    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME .
-  dependencies:
-    - test:unit-test
-
 publish:artifact:
   stage: publish
   script:
@@ -72,24 +63,6 @@ publish:artifact:
       -v "$ARTIFACTORY_URL/$ARTIFACT_NAME-$CI_COMMIT_REF_NAME.jar"
   dependencies:
     - build:jar
-
-publish:docker-image:
-  image: $DOCKER_IMAGE
-  stage: publish
-  script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
-  dependencies:
-    - build:docker-image
-
-cleanup:docker-images:
-  image: $DOCKER_IMAGE
-  stage: cleanup
-  script:
-    - docker image prune -f --filter label=stage=builder
-    - docker rmi $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
-  dependencies:
-    - publish:docker-image
 
 deploy:TAP:
   before_script:

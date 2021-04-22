@@ -52,13 +52,13 @@ java -jar ./target/cdaas-demo-app-1.0.0.jar
 Build image
 
 ```bash
-docker build -t cdaas-demo-app:latest .
+docker build -t cdaas-demo-app:1.0.0 .
 ```
 
 ## Running the application as docker container
 
 ```bash
-docker run -d cdaas-demo-app:latest
+docker run -d cdaas-demo-app:1.0.0
 ```
 
 # Application endpoints

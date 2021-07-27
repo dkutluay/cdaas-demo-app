@@ -55,7 +55,13 @@ build:image:
   image: $DOCKER_IMAGE
   stage: temp
   services:
-    - docker:stable-dind
+    - name: docker:dind
+      command:
+        - /bin/sh
+        - -c
+        - |
+          echo "$CI_SERVER_TLS_CA_FILE" > /etc/gitlab/ssl/gitlab.example.com.crt || exit
+          dockerd-entrypoint.sh || exit
   variables:
     IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
     DOCKER_HOST: tcp://docker:2375

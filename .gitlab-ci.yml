@@ -1,7 +1,7 @@
 image: java:8
 
 variables:
-  DOCKER_TLS_CERTDIR: "/certs"
+  DOCKER_TLS_CERTDIR: ""
   DOCKER_IMAGE: "docker:19.03.13"
   ARTIFACTORY_URL: "https://192.168.130.23/artifactory/cdaas"
   XLRELEASE_URL: "https://192.168.130.22"
@@ -46,7 +46,7 @@ build:jar:
   before_script:
     - ./mvnw versions:set -DnewVersion=$CI_COMMIT_REF_NAME
   stage: build
-  script: ./mvnw clean install spring-boot:repackage
+  script: ./mvnw clean install -DskipTests=true spring-boot:repackage
   dependencies:
     - test:unit-test
 

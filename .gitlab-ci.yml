@@ -23,9 +23,9 @@ stages:
   - cleanup
   - deploy
 
-workflow:
-  rules:
-    - if: '$CI_COMMIT_TAG'
+#workflow:
+#  rules:
+#    - if: '$CI_COMMIT_TAG'
 
 validate:
   stage: validate
@@ -52,13 +52,17 @@ build:jar:
 
 build:image:
   image: $DOCKER_IMAGE
-  stage: build
+  stage: validate
+  tags:
+    - dind
   services:
-    - docker:19.03.12-dind
+    - docker:stable-dind
   variables:
     IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ""
   script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker build -t $IMAGE_TAG .
     - docker push $IMAGE_TAG
 

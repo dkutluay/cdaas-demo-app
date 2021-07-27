@@ -16,6 +16,7 @@ default:
     - chmod +x mvnw
 
 stages:
+  - temp
   - validate
   - test
   - build
@@ -52,9 +53,7 @@ build:jar:
 
 build:image:
   image: $DOCKER_IMAGE
-  stage: validate
-  tags:
-    - dind
+  stage: temp
   services:
     - docker:stable-dind
   variables:

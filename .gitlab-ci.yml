@@ -77,7 +77,10 @@ deploy:ansible:
   tags:
     - ansible
   script:
+    - git clone http://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.example.com/root/playbook-awx-artifactory-download-and-deploy.git
     - ls -al
+    - cd playbook-awx-artifactory-download-and-deploy
+    - ls -al 
     - ansible all -m ping
 
 #     - |

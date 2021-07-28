@@ -76,6 +76,8 @@ deploy:ansible:
   stage: temp
   tags:
     - ansible
+  before_script:
+    - yum -y install git
   script:
     - git clone http://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.example.com/root/playbook-awx-artifactory-download-and-deploy.git
     - ls -al

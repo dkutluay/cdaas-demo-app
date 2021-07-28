@@ -83,6 +83,7 @@ deploy:ansible:
   script:
     - git clone http://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.example.com/root/playbook-awx-artifactory-download-and-deploy.git
     - cd playbook-awx-artifactory-download-and-deploy
+    - ansible --version
     - ansible-playbook deploy_from_container_registry.yml
 
 #     - |

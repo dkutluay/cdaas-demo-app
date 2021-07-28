@@ -72,7 +72,7 @@ deploy:image:
     - docker run -d -p 8888:8080 $IMAGE_TAG
 
 deploy:ansible:
-  image: ansible/ansible-runner
+  image: ansible/ansible-runner:1.4.7
   stage: temp
   tags:
     - ansible

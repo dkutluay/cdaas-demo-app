@@ -77,6 +77,7 @@ deploy:ansible:
   tags:
     - ansible
   script:
+    - ls -al
     - ansible all -m ping
 
 #     - |

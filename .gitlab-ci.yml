@@ -17,6 +17,7 @@ default:
     - chmod +x mvnw
 
 stages:
+  - temp
   - validate
   - test
   - build
@@ -62,9 +63,10 @@ build:image:
     - docker push $IMAGE_TAG
 
 deploy:image:
-  before_script:
-    - echo "Image to be deployed $IMAGE_TAG"
-  stage: deploy
+  image: $DOCKER_IMAGE
+  stage: temp
+  services:
+    - name: docker:dind
   script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker run -d -p 8888:8080 $IMAGE_TAG

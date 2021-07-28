@@ -6,6 +6,7 @@ variables:
   ARTIFACTORY_URL: "https://192.168.130.23/artifactory/cdaas"
   XLRELEASE_URL: "https://192.168.130.22"
   ARTIFACT_NAME: "cdaas-demo-app"
+  IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
 
 default:
   cache:
@@ -16,7 +17,6 @@ default:
     - chmod +x mvnw
 
 stages:
-  - temp
   - validate
   - test
   - build
@@ -53,11 +53,9 @@ build:jar:
 
 build:image:
   image: $DOCKER_IMAGE
-  stage: temp
+  stage: build
   services:
     - name: docker:dind
-  variables:
-    IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
   script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker build -t $IMAGE_TAG .

@@ -76,14 +76,14 @@ deploy:ansible:
   stage: temp
   tags:
     - ansible
+  variables:
+    GIT_STRATEGY: none
   before_script:
     - yum -y install git
   script:
     - git clone http://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.example.com/root/playbook-awx-artifactory-download-and-deploy.git
-    - ls -al
     - cd playbook-awx-artifactory-download-and-deploy
-    - ls -al 
-    - ansible all -m ping
+    - ansible-playbook deploy_from_container_registry.yml
 
 #     - |
 #       curl -k -X POST --header "Content-Type:application/json" \

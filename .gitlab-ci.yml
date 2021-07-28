@@ -42,6 +42,7 @@ test:unit-test:
     reports:
       junit: $CI_PROJECT_DIR/target/surefire-reports/TEST-com.demo.DemoControllerTest.xml
 
+# This is now useless, but I did not remove it since it is part of the original pipeline
 build:jar:
   before_script:
     - ./mvnw versions:set -DnewVersion=$CI_COMMIT_REF_NAME
@@ -101,7 +102,8 @@ deploy:ansible:
     # This ansible playbook could be placed in the app repo, but I did not want to change repo structure
     # Doing that saves time spent for git installation and git clone operations
     - git clone http://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.example.com/root/playbook-awx-artifactory-download-and-deploy.git
-    - ansible-runner run playbook-awx-artifactory-download-and-deploy -p deploy_from_container_registry.yml
+    #- ansible-runner run playbook-awx-artifactory-download-and-deploy -p deploy_from_container_registry.yml
+    - ansible-runner playbook playbook-awx-artifactory-download-and-deploy/deploy_from_container_registry.yml --extra-vars "image=$IMAGE_TAG appname=$ARTIFACT_NAME"
   dependencies:
     - build:image
 

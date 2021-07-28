@@ -48,7 +48,7 @@ build:jar:
     - ./mvnw versions:set -DnewVersion=$CI_COMMIT_REF_NAME
   stage: build
   # Added skipTests parameter since one of the tests is failing.
-  script: ./mvnw clean install -DskipTests=true spring-boot:repackage
+  script: ./mvnw clean install spring-boot:repackage
   dependencies:
     - test:unit-test
 

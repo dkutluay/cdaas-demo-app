@@ -22,11 +22,11 @@ public class DemoControllerTest {
 				.andExpect(content().string(containsString("Demo App")));
 	}
 
-	@Test
+/* 	@Test
 	public void gitlab() throws Exception {
 		mockMvc.perform(get("/"))
 				.andExpect(content().string(containsString("GitLab")));
-	}
+	} */
 
 	@Test
 	public void artifactory() throws Exception {

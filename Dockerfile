@@ -3,7 +3,7 @@ LABEL stage=builder
 WORKDIR /app
 ADD ./ /app/
 RUN cd /app
-RUN ./mvnw clean install -DskipTests=true spring-boot:repackage
+RUN ./mvnw clean install spring-boot:repackage
 
 FROM openjdk:8-jdk-alpine
 WORKDIR /app

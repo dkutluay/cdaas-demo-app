@@ -76,8 +76,8 @@ deploy:ansible:
   stage: temp
   tags:
     - ansible
-  variables:
-    GIT_STRATEGY: none
+#  variables:
+#    GIT_STRATEGY: none
   before_script:
     - yum -y install git
   script:
